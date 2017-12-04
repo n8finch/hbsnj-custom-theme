@@ -25,3 +25,13 @@ function beans_child_enqueue_assets() {
 	wp_enqueue_script( 'main-js', get_stylesheet_directory_uri() . '/main.min.js', array( 'jquery' ), date("ymd-Gis"), true  );
 
 }
+
+
+// Set the default layout (filter)
+beans_add_smart_action( 'beans_default_layout', 'banks_default_layout' );
+
+function banks_default_layout() {
+
+    return 'c';
+
+}
